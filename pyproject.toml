@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linux-keyctl"
+version = "1.1.0"
+description = "Thin Python interface to the Linux kernel key management system calls"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{name = "Juan Domingo Martín"}]
+keywords = ["linux", "keyring", "keyctl", "keyutils", "kernel", "secrets"]
+dependencies = []
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Operating System Kernels :: Linux",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/juando-martin/linux-keyctl"
+Documentation = "https://linux-keyctl.readthedocs.io/"
+Source = "https://github.com/juando-martin/linux-keyctl"
+Issues = "https://github.com/juando-martin/linux-keyctl/issues"
+Changelog = "https://github.com/juando-martin/linux-keyctl/blob/main/CHANGES.md"
+
+[project.optional-dependencies]
+docs = ["sphinx>=8,<10"]
+dev = ["black>=26,<27", "pycodestyle>=2.14,<3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["linux_keyctl"]
+
+[tool.setuptools.package-data]
+linux_keyctl = ["py.typed"]
+
+[tool.black]
+line-length = 79
+target-version = ["py311"]
